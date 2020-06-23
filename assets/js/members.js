@@ -5,7 +5,7 @@ var file = "\\assets\\Member List Fall 2020 - Sheet1.csv";
   document.getElementById("memberRow").innerHTML += "<p> Reader </p>";
 
   //When the file finish load
-  reader.onload = function(reader) {
+  reader.onload = (function(reader) {
     document.getElementById("memberRow").innerHTML += "<p> Onload </p>";
       //get the file.
       var csv = toString(reader.result);
