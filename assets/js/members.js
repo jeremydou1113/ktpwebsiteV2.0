@@ -1,4 +1,8 @@
-var file = "\assets\Member List Fall 2020 - Sheet1.csv";
+
+var file = "\\assets\\Member List Fall 2020 - Sheet1.csv";
+
+document.getElementById("memberRow").innerHTML = file;
+
   var reader = new FileReader();
   reader.readAsText(file);
 
@@ -6,10 +10,10 @@ var file = "\assets\Member List Fall 2020 - Sheet1.csv";
   /*reader.readAsText(file,'ISO-8859-1');*/
 
   //When the file finish load
-  //reader.onload = function(event) {
+  reader.onload = function(event) {
 
     //get the file.
-    var csv = reader.result;
+    var csv = event.target.result;
 
     //split and get the rows in an array
     var rows = csv.split('\n');
@@ -34,4 +38,4 @@ var file = "\assets\Member List Fall 2020 - Sheet1.csv";
         var value = cols[j];
       }*/
     }
-  //}
+  }
