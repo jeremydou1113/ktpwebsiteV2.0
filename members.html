@@ -285,12 +285,8 @@
     <section id="actives" class="actives">
         <h1>Active Members</h1>
 
-        <div class="container">
-            <div id="memberRow">
+        <div class="container" id="memberContainer">
 
-
-
-            </div>
 
             <script>
                 function loadFile(filePath) {
@@ -311,6 +307,15 @@
                 for (var i = 1; i < rows.length; i++) {
                     //split by separator (,) and get the columns
                     cols = rows[i].split(',');
+
+                    //start of row
+                    if(i % 5 == 1) {
+                      document.getElementById("memberContainer").innerHTML += "<div class=\"row\" id=\"memberRow\">";
+                    }
+
+                    if(i % 5 == 0) {
+                      document.getElementById("memberContainer").innerHTML += "</div>";
+                    }
 
                     var memberName = cols[0] + " " + cols[1];
                     var memberImage = cols[5];
